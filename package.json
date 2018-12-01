@@ -1,0 +1,8 @@
+{
+  "name": "slack-bookmark",
+  "repository": "git@github.com:matsub/slack-bookmark.git",
+  "author": "matsub <matsub.rk@gmail.com>",
+  "dependencies": {
+    "@google-cloud/datastore": "^2.0.0"
+  }
+}
