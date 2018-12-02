@@ -26,5 +26,5 @@ deploy:
       name: deploy to google functions
       code: |
         gcloud auth activate-service-account $GCLOUD_SERVICE_ACCOUNT --key-file credentials.json --project $GCLOUD_PROJECT_ID
-        gcloud functions deploy slackBookmark --runtime nodejs8 --trigger-http
-        gcloud functions deploy slackBookmarkPickRandomly --runtime nodejs8 --trigger-http
+        gcloud functions deploy slackBookmark --runtime nodejs8 --trigger-http --region=asia-northeast1
+        gcloud functions deploy slackBookmarkPickRandomly --runtime nodejs8 --trigger-http --region=asia-northeast1
