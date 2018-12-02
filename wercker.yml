@@ -10,3 +10,21 @@ build:
       code: |
         echo "node version $(node -v) running"
         echo "npm version $(npm -v) running"
+
+
+deploy:
+  box: google/cloud-sdk:alpine
+  steps:
+    - create-file:
+      name: create credentials.json
+      filename: credentials.json
+      overwrite: true
+      hide-from-log: true
+      content: $GCLOUD_CREDENTIALS
+
+    - script:
+      name: deploy to google functions
+      code: |
+        gcloud auth activate-service-account $GCLOUD_SERVICE_ACCOUNT --key-file credentials.json --project $GCLOUD_PROJECT_ID
+        gcloud functions deploy slackBookmark --runtime nodejs8 --trigger-http
+        gcloud functions deploy slackBookmarkPickRandomly --runtime nodejs8 --trigger-http
