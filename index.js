@@ -11,7 +11,7 @@ function register(url) {
   const entity = { key, data: { url } }
 
   return datastore.save(entity)
-    .then(() => '覚えたよ')
+    .then(() => '覚えた')
     .catch(err => {
       console.error(err)
       return '覚えらんねえ'
