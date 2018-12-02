@@ -2,7 +2,14 @@
   "name": "slack-bookmark",
   "repository": "git@github.com:matsub/slack-bookmark.git",
   "author": "matsub <matsub.rk@gmail.com>",
+  "scripts": {
+    "test": "npm run lint",
+    "lint": "eslint ."
+  },
   "dependencies": {
     "@google-cloud/datastore": "^2.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.9.0"
   }
 }
